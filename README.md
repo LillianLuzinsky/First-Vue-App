@@ -10,4 +10,5 @@ I'll be learning how to create a shopping cart
 ## Things I learned
 
 1) How to create an a Vue chrome extension
-2) How to create a new Vue object in Javascript and pass it through the html file
+2) How to begin writing a Vue application with a Vue instance (new Vue())
+3) How to load basic data into our homepage
