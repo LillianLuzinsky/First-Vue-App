@@ -30,8 +30,11 @@
               :key="variant.variantId"
               class="color-box"
               :style="{ backgroundColor: variant.variantColor }"
-              v-on:mouseover="updateProduct(variant.variantImage)">
+              @mouseover="updateProduct(variant.variantImage)">
         </div>
+
+        <h2 :style="{ color:color}"
+        >this text should be red</h2>
 
         <button v-on:click="addToCart">Add to Cart</button>
 
