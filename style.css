@@ -91,3 +91,7 @@
   .outOfStock {
     text-decoration: line-through;
   }
+
+  button{
+    outline: none;
+  }
