@@ -12,3 +12,4 @@ I'll be learning how to create a shopping cart
 1) How to create an a Vue chrome extension
 2) How to begin writing a Vue application with a Vue instance (new Vue())
 3) How to load basic data into our homepage
+4) Data Binding to bind our image with v-bing:src in HTML
