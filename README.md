@@ -22,3 +22,4 @@ I'll be learning how to create a shopping cart
 11) How to add a method inside our Vue app
 12) How to use mouseover handler to change image when hovering over 'green' or 'blue'
 13) How to bind css style to event handlers
+14) Learned how to disable the cart button with :disabled
