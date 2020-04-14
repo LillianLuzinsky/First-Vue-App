@@ -25,4 +25,5 @@ I'll be learning how to create a shopping cart
 14) Learned how to disable the cart button with :disabled
 15) How to make computed properties
 16) How to convert our data properties into computed properties
-17) How to build Vue components
+17) How to build Vue components (Need more practice make and understanding components)
+18) How to make a cart (a local component) into a global component
