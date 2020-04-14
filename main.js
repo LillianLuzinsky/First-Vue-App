@@ -1,7 +1,6 @@
 var app = new Vue({
   el: "#app",
   data: {
-    color: "red",
     product: "Socks",
     inStock: true,
     image: "./assets/vmSocks-green-onWhite.jpg",
