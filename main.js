@@ -1,17 +1,3 @@
-Vue.component("product-details", {
-  props: {
-    details: {
-      type: Array,
-      required: true,
-    },
-  },
-  template: `
-    <ul>
-      <li v-for="detail in details">{{ detail }}</li>
-    </ul>
-  `,
-});
-
 Vue.component("product", {
   props: {
     premium: {
@@ -20,73 +6,61 @@ Vue.component("product", {
     },
   },
   template: `
-  <div class="product">
-
-      <div class="product-image">
-        <img v-bind:src="image" alt="green socks">
+  <div id="product">
+  
+    <div class="product-image">
+    <img :src="image" />      
+    </div>
+    
+    <div class="product-info">
+      <div class="cart">
+        <p>Cart({{ cart }})</p>
       </div>
-
-      <div class="product-info">
-        <h1>{{ brand }} {{ product }}</h1>
-        <p v-if="inStock">In Stock</p>
-        <p v-else 
-            :class="{ outOfStock:!inStock }">Out of Stock</!DOCTYPE>
-        <p v-if="inStock">{{ sale }}</p>
-        <p> Shipping: {{ shipping }} </p>
-
-        <product-details :details="details"></product-details>
-
-        <div v-for="(variant, index) in variants" 
-              :key="variant.variantId"
-              class="color-box"
-              :style="{ backgroundColor: variant.variantColor }"
-              @mouseover="updateProduct(index)">
-        </div>
-
-        <button v-on:click="addToCart" 
-                    :disabled="!inStock"
-                    :class="{ disabledButton:!inStock }"
-        >Add to Cart</button>
-
-        <div class="cart">
-          <p>Cart({{ cart }})</p>
-        </div>
-        
+    
+      <h1>{{ title }}</h1>
+      <p>Shipping: {{ shipping }}</p>
+      
+      <p v-if="inStock">In Stock</p>
+      <p v-else>Out of Stock</p>
+      
+      <h2>Details</h2>
+      <ul>
+        <li v-for="detail in details">{{ detail }}</li>
+      </ul>
+      <h3>Colors:</h3>
+      <div v-for="variant in variants" :key="variant.variantId">
+        <div class="color-box" :style="{ backgroundColor: variant.variantColor }" @mouseover="updateProduct(index)"></div>
       </div>
+      <button :class="{ disabledButton: !inStock }" v-on:click="addToCart" :disabled="!inStock">Add to Cart</button>
+    </div>
+  </div>
   `,
-
   data() {
     return {
-      brand: "Vue Mastery",
       product: "Socks",
+      brand: "Vue Mastery",
       selectedVariant: 0,
       details: ["80% cotton", "20% polyester", "Gender-neutral"],
-      sizes: ["small", "medium", "large"],
       variants: [
         {
           variantId: 2234,
+          variantQuantity: 15,
           variantColor: "green",
-          variantImage: "./assets/vmSocks-green-onWhite.jpg",
-          variantQuantity: 10,
+          variantImage: "./assets/vmSocks-green.jpg",
         },
         {
           variantId: 2235,
-          variantColor: "blue",
-          variantImage: "./assets/vmSocks-blue-onWhite.jpg",
           variantQuantity: 0,
+          variantColor: "blue",
+          variantImage: "./assets/vmSocks-blue.jpg",
         },
       ],
       cart: 0,
-      onSale: true,
     };
   },
-
   methods: {
     addToCart() {
       this.cart += 1;
-    },
-    remove() {
-      this.cart -= 1;
     },
     updateProduct(index) {
       this.selectedVariant = index;
@@ -100,19 +74,18 @@ Vue.component("product", {
       return this.variants[this.selectedVariant].variantImage;
     },
     inStock() {
-      return this.variants[this.selectedVariant].variantQuantity;
-    },
-    sale() {
-      if (this.onSale) {
-        return this.brand + " " + this.product + " are on sale!";
+      if (this.quantity > 0) {
+        return true;
+      } else {
+        return false;
       }
-      return this.brand + " " + this.product + " are not on sale";
     },
     shipping() {
       if (this.premium) {
         return "Free";
+      } else {
+        return 2.99;
       }
-      return 2.99;
     },
   },
 });
@@ -120,6 +93,6 @@ Vue.component("product", {
 var app = new Vue({
   el: "#app",
   data: {
-    premium: false
-  }
+    premium: true,
+  },
 });
