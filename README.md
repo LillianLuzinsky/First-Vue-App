@@ -23,3 +23,4 @@ I'll be learning how to create a shopping cart
 12) How to use mouseover handler to change image when hovering over 'green' or 'blue'
 13) How to bind css style to event handlers
 14) Learned how to disable the cart button with :disabled
+15) How to make computed properties
