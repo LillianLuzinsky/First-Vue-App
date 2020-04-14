@@ -24,3 +24,4 @@ I'll be learning how to create a shopping cart
 13) How to bind css style to event handlers
 14) Learned how to disable the cart button with :disabled
 15) How to make computed properties
+16) How to convert our data properties into computed properties
