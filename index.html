@@ -4,13 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product App</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="app">
-    <h1>{{ product }}</h1>
-    <h1>{{ description }}</h1>
+  
+  <div class="nav-bar"></div>
 
-  </div>
+  <div id="app">
+    <div class="product">
+
+      <div class="product-image">
+        <img src="" alt="">
+      </div>
+
+      <div class="product-info">
+        <h1>{{ product }}</h1>
+      </div>
+      
+    </div>
+  </div><!--This is the of #app-->
+
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
   <script src="main.js"></script>
 </body>
