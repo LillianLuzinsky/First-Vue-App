@@ -23,16 +23,14 @@
         <p v-else>Out of Stock</p>
 
         <ul>
-          <li v-for="item in details">{{ item }}</li>
+          <li v-for="detail in details">{{ detail }}</li>
         </ul>
 
-        <div v-for="variant in variants" :key="variant.variantId">
-          <p>{{ variant.variantColor }}</p>
+        <button v-on:click="cart += 1">Add the Cart</button>
+
+        <div class="cart">
+          <p>Cart ({{ cart }}) </p>
         </div>
-
-        <ul>
-          <li v-for="size in sizes">{{ size }}</li>
-        </ul>
         
       </div>
       

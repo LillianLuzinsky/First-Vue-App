@@ -18,3 +18,4 @@ I'll be learning how to create a shopping cart
 7) How to use v-else-if conditional statement
 8) How to use v-show to toggle visibility on the DOM element
 9) How to use v-for to loop through each item in the details array and display the item individually in the DOM
+10) How to use increment the value of cart by adding v-on click handler on button
