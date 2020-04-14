@@ -15,3 +15,4 @@ I'll be learning how to create a shopping cart
 4) Data Binding to bind our image with v-bing:src in HTML
 5) How to bind a url link to a href tag in HTML
 6) How to use conditional rendering with v-if and v-else to render if out product is in or out of stock
+7) How to use v-else-if conditional statement
