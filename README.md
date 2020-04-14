@@ -21,3 +21,4 @@ I'll be learning how to create a shopping cart
 10) How to use increment the value of cart by adding v-on click handler on button
 11) How to add a method inside our Vue app
 12) How to use mouseover handler to change image when hovering over 'green' or 'blue'
+13) How to bind css style to event handlers
