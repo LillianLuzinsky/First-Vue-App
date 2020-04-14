@@ -16,7 +16,7 @@ Vue.component("product", {
   props: {
     premium: {
       type: Boolean,
-      required: true
+      required: true,
     },
   },
   template: `
@@ -34,9 +34,7 @@ Vue.component("product", {
         <p v-if="inStock">{{ sale }}</p>
         <p> Shipping: {{ shipping }} </p>
 
-        <ul>
-          <li v-for="detail in details">{{ detail }}</li>
-        </ul>
+        <product-details :details="details"></product-details>
 
         <div v-for="(variant, index) in variants" 
               :key="variant.variantId"
@@ -110,12 +108,12 @@ Vue.component("product", {
       }
       return this.brand + " " + this.product + " are not on sale";
     },
-    shipping(){
-      if(this.premium){
-        return "Free"
+    shipping() {
+      if (this.premium) {
+        return "Free";
       }
-      return 2.99
-    }
+      return 2.99;
+    },
   },
 });
 
