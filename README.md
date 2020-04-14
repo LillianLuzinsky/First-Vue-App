@@ -20,3 +20,4 @@ I'll be learning how to create a shopping cart
 9) How to use v-for to loop through each item in the details array and display the item individually in the DOM
 10) How to use increment the value of cart by adding v-on click handler on button
 11) How to add a method inside our Vue app
+12) How to use mouseover handler to change image when hovering over 'green' or 'blue'
