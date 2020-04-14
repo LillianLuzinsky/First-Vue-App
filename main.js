@@ -20,9 +20,9 @@ var app = new Vue({
     ],
     cart: 0,
   },
-  methods: {
+  methods:{
     addToCart: function () {
-      this.cart += 1;
-    },
-  },
+      this.cart += 1
+    }
+  }
 });
