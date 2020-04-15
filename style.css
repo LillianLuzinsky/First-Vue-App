@@ -86,6 +86,7 @@
   .activeTab {
     color: #16C0B0;
     text-decoration: underline;
+    margin-right: 20px;
   }
 
   .outOfStock {

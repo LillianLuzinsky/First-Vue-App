@@ -32,3 +32,10 @@ I'll be learning how to create a shopping cart
 21) How to add a product review to display in the product component
 22) How to write custome error messages
 23) Able to add a recommend radio buttons
+
+---
+
+## Challenges
+
+1) Need to continue practicing how to create forms and submit review info
+2) Didn't understand how tabs in Vuejs work
