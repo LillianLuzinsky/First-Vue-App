@@ -1,3 +1,5 @@
+Vue.config.devtools = true;
+
 Vue.component("product", {
   props: {
     premium: {
@@ -38,7 +40,20 @@ Vue.component("product", {
                 </button>
       
              </div>  
-            <product-review></product-review>
+
+             <div>
+              <h2>Reviews</h2>
+              <p v-if="!reviews.length">There are no reviews yet.</p>
+                <ul>
+                  <li v-for="review in reviews">
+                    <span>{{ review.name }}</span>
+                    <span>Rating: {{ review.rating }}</span>
+                    <span>Review: {{ review.review }}</span>
+                  </li>
+                </ul>
+             </div>
+
+            <product-review @review-submitted="addReview"></product-review>
           </div>
          `,
   data() {
@@ -61,6 +76,7 @@ Vue.component("product", {
           variantQuantity: 0,
         },
       ],
+      reviews: []
     };
   },
   methods: {
@@ -70,6 +86,9 @@ Vue.component("product", {
     updateProduct(index) {
       this.selectedVariant = index;
     },
+    addReview(productReview){
+      this.reviews.push(productReview)
+    }
   },
   computed: {
     title() {
@@ -135,6 +154,7 @@ Vue.component("product-review", {
         review: this.review,
         rating: this.rating
       }
+      this.$emit('review-submitted', productReview)
       this.name = null,
       this.review = null,
       this.rating = null

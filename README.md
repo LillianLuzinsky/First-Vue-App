@@ -29,3 +29,4 @@ I'll be learning how to create a shopping cart
 18) How to make a cart (a local component) into a global component
 19) How to make a local function work globally with $emit
 20) About v-model for two way data binding
+21) How to add a product review to display in the product component
