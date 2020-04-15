@@ -92,8 +92,8 @@ Vue.component("product", {
 
 Vue.component("product-review", {
   template: `
-    <form class="review-form">
-    
+    <form class="review-form" @submit.prevent="onSubmit">
+
         <p>
           <label for="name">Name:</label>
           <input class="name" v-model="name">
@@ -101,7 +101,7 @@ Vue.component("product-review", {
         
         <p>
           <label for="review">Review:</label>      
-          <textarea id="review"></textarea>
+          <textarea id="review" v-model="review"></textarea>
         </p>
         
         <p>
@@ -128,6 +128,18 @@ Vue.component("product-review", {
       rating: null,
     };
   },
+  methods: {
+    onSubmit(){
+      let productReview = {
+        name: this.name,
+        review: this.review,
+        rating: this.rating
+      }
+      this.name = null,
+      this.review = null,
+      this.rating = null
+    }
+  }
 });
 
 var app = new Vue({
