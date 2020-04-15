@@ -27,3 +27,5 @@ I'll be learning how to create a shopping cart
 16) How to convert our data properties into computed properties
 17) How to build Vue components (Need more practice make and understanding components)
 18) How to make a cart (a local component) into a global component
+19) How to make a local function work globally with $emit
+20) What does v-model do
