@@ -92,6 +92,6 @@
     text-decoration: line-through;
   }
 
-  button{
+  button, input{
     outline: none;
   }

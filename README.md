@@ -28,4 +28,4 @@ I'll be learning how to create a shopping cart
 17) How to build Vue components (Need more practice make and understanding components)
 18) How to make a cart (a local component) into a global component
 19) How to make a local function work globally with $emit
-20) What does v-model do
+20) About v-model for two way data binding
