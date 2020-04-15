@@ -49,6 +49,7 @@ Vue.component("product", {
                     <span>{{ review.name }}</span>
                     <span>Rating: {{ review.rating }}</span>
                     <span>Review: {{ review.review }}</span>
+                    <span>Recommend: {{ review.recommend }}</span>
                   </li>
                 </ul>
              </div>
@@ -76,7 +77,7 @@ Vue.component("product", {
           variantQuantity: 0,
         },
       ],
-      reviews: []
+      reviews: [],
     };
   },
   methods: {
@@ -86,9 +87,9 @@ Vue.component("product", {
     updateProduct(index) {
       this.selectedVariant = index;
     },
-    addReview(productReview){
-      this.reviews.push(productReview)
-    }
+    addReview(productReview) {
+      this.reviews.push(productReview);
+    },
   },
   computed: {
     title() {
@@ -139,12 +140,17 @@ Vue.component("product-review", {
             <option>2</option>
             <option>1</option>
           </select>
-        </p>
+        </p></br>
+
+        <p>Would you recommend this product?</p>
+        
+        <label for="yes"><input type="radio" value="yes" v-model="recommend">Yes</label><br>
+        <label for="no"><input type="radio" value="no" v-model="recommend">No</label><br>
             
         <p>
           <input type="submit" value="Submit">  
         </p>    
-      
+
     </form>
   `,
   data() {
@@ -152,27 +158,29 @@ Vue.component("product-review", {
       name: null,
       review: null,
       rating: null,
-      errors: []
+      recommend: null,
+      errors: [],
     };
   },
   methods: {
-    onSubmit(){
-      if(this.name && this.review && this.rating){
+    onSubmit() {
+      if (this.name && this.review && this.rating && this.recommend) {
         let productReview = {
           name: this.name,
           review: this.review,
           rating: this.rating,
+          recommend: this.recommend,
         };
         this.$emit("review-submitted", productReview);
         (this.name = null), (this.review = null), (this.rating = null);
-      }
-      else{
-        if(!this.name) this.errors.push("Name required")
-        if (!this.review) this.errors.push("Review required")
+      } else {
+        if (!this.name) this.errors.push("Name required");
+        if (!this.review) this.errors.push("Review required");
         if (!this.rating) this.errors.push("Rating required");
+        if (!this.recommend) this.errors.push("Recommend required");
       }
-    }
-  }
+    },
+  },
 });
 
 var app = new Vue({
